@@ -6,6 +6,7 @@ import NavBarBt from './components/NavBarBt';
 import ItemdetailContainer from './components/ItemdetailContainer';
 import{BrowserRouter, Routes, Route} from 'react-router-dom';
 import NotFound from './components/NotFound';
+import { CartProvider } from './context/CartContext';
 
 function App() {
  
@@ -13,7 +14,8 @@ function App() {
   return (
     <BrowserRouter>
       
-     <NavBarBt/>
+     <CartProvider> 
+      <NavBarBt/>  
 
       <Routes>
         <Route path='/' element={<ItemListContainer saludo="Bienvenidos a Coco y Almendra"/>}/>
@@ -21,7 +23,7 @@ function App() {
         <Route path='=/item/:id' element={<ItemdetailContainer/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
-
+     </CartProvider>
     </BrowserRouter>
   )
 }

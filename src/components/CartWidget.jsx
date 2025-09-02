@@ -1,7 +1,11 @@
 import { FaCartShopping } from "react-icons/fa6";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import Badge from 'react-bootstrap/Badge';
 
 const CartWidget = () => {
+    const {cart} = useContext(CartContext)
+    console.log(cart, "contexto")
     return(
         <>
 

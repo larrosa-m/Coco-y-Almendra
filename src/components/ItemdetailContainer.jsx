@@ -9,16 +9,14 @@ const ItemdetailContainer = () => {
     console.log(id, 'useParams')
 
  useEffect(()=> {
-    getOneProduct(id) 
-        .then((res) => setDetalle(res))
-        .catch((error) => console.log(error))
- },[])
- 
-    return (
-    <>
-    <ItemDetail detalle={detalle}/>
-    </>
-  )
-}
+    setCargando(true)
+    constprodCollection = collection(db, "productos")
+    const docRef = doc(prodCollection, id)
+    getDoc(docRef)
+    .then((res) => setDetalle({id: res.id, ...res.data()}))
+    .catch((error) => console.log(error))
+    .finally(() => setCargando(false))
 
-export default ItemdetailContainer
+}, [id])
+}
+export default ItemDetailContainer
