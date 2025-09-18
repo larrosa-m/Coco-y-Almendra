@@ -1,12 +1,16 @@
-# React + Vite
+# Coco y Almendra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ E-commerce desarrollado con React JS, como protecto para CoderHouse.
 
-Currently, two official plugins are available:
+### Instalación ⚙️
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone el repositorio.
+2. Hacer el comando `cd coco-y-almendra` para moverse a la carpeta del proyecto.
+3. Instale dependencias con el comando `npm install`
+4. Para levantar la app en el servidor local ejecute el comando `npm run dev`
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Librerias utilizadas 📖
+- [React Bootstrap](https://react-bootstrap.netlify.app/): utilizada para el styling de la app.
+- [React Router Dom](https://react-bootstrap.netlify.app/): utilizada para la navegación por rutas
+- [Firebase](https://react-bootstrap.netlify.app/): utilizada como base de datos

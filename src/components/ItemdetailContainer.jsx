@@ -1,22 +1,47 @@
 import React, { useEffect, useState } from 'react'
-import { getOneProduct } from '../mock/AsyncService'
+import { getOneProduct, getProducts } from '../mock/AsyncService'
 import ItemDetail from './ItemDetail'
-import { useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import LoaderComponent from './LoaderComponent'
+import { collection, doc, getDoc } from 'firebase/firestore'
+import { db } from '../service/firebase'
 
-const ItemdetailContainer = () => {
- const[detalle, setDetalle] = useState({})
- const {id} = useParams()
-    console.log(id, 'useParams')
+const ItemDetailContainer = () => {
+    const [detalle, setDetalle]= useState({})
+    const [cargando, setCargando] = useState(false)
+    const [invalid, setInvalid]= useState(null)
+    const {id} = useParams()
+   
 
- useEffect(()=> {
-    setCargando(true)
-    constprodCollection = collection(db, "productos")
-    const docRef = doc(prodCollection, id)
-    getDoc(docRef)
-    .then((res) => setDetalle({id: res.id, ...res.data()}))
-    .catch((error) => console.log(error))
-    .finally(() => setCargando(false))
+    useEffect(()=>{
+      setCargando(true)
+      const docRef= doc(db, "productos", id)
+      getDoc(docRef)
+      .then((res)=>{
+        if(res.data()){
+          setDetalle({id:res.id, ...res.data()})
+        }else{
+          setInvalid(true)
+        }
+      })
+      .catch((error)=> console.log(error))
+      .finally(()=> setCargando(false))
+      
+    },[id])
 
-}, [id])
+if(invalid){
+  return(
+    <div>
+      <h2>El producto no existe! </h2>
+      <Link className='btn btn-dark' to='/'>Volver a Home</Link>
+    </div>
+  )
 }
+  return (
+    <>
+    {cargando ? <LoaderComponent/> :<ItemDetail detalle={detalle}/>}
+    </>
+  )
+}
+
 export default ItemDetailContainer

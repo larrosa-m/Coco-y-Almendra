@@ -3,15 +3,14 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import Badge from 'react-bootstrap/Badge';
 
-const CartWidget = () => {
-    const {cart} = useContext(CartContext)
-    console.log(cart, "contexto")
+const CartWidget = () => { 
+    const { cart, cartQuantity } = useContext(CartContext); 
+    console.log(cart, "contexto");
+
     return(
         <>
-
         <FaCartShopping fontFamily="1.8rem" />
-        <Badge pill bg="danger">1</Badge>
-
+        <Badge pill bg="danger">{cartQuantity()}</Badge>
         </>
     )
 }
