@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { MdMargin } from 'react-icons/md'
 
 const CartView = () => {
   const {cart, clear, removeItem, cartTotal}= useContext(CartContext)
@@ -9,8 +10,8 @@ const CartView = () => {
   Swal.fire({
     title:'¿Vaciar el carrito?',
     showDenyButton:true,
-    denyButtonText:'Si',
-    confirmButtonText:'No',
+    denyButtonText:'No',
+    confirmButtonText:'Si',
  }).then((result)=>{
   if(result.isConfirmed){
     clear()
@@ -23,7 +24,7 @@ const CartView = () => {
       <div>
       {cart.map((compra)=>(
         <div key={compra.id}  style={{display:'flex', justifyContent:'space-between', alignItems:'center', width:'100%', padding:'2rem'}}>
-          <img src={compra.image} alt={compra.name} style={{width:'10rem'}}/>
+          <img src={compra.image} alt={compra.name} style={{width:'10rem', borderRadius:15 }}/>
           <span>{compra.name}</span>
           <span>${compra.price},00</span>
           <span>unidades: {compra.quantity}</span>
@@ -34,7 +35,7 @@ const CartView = () => {
       </div>
       <span>Total a pagar: ${cartTotal()}, 00</span>
       <div>
-        <button className='btn btn-danger' onClick={preConfirm}>Borrar Carrito</button>
+        <button className='btn btn-danger' onClick={preConfirm} style={{ margin: '10px'}}>Borrar Carrito</button>
         <Link className='btn btn-success' to='/checkout'>Terminar Compra</Link>
         </div>
     </div>

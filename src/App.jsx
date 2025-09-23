@@ -20,7 +20,7 @@ function App() {
       <NavBarBt/>  
 
       <Routes>
-        <Route path='/' element={<ItemListContainer saludo="Bienvenidos a Coco y Almendra"/>}/>
+        <Route path='/' element={<ItemListContainer saludo="Explora nuestras delicias sin culpa"/>}/>
          <Route path='/categories/:category' element={<ItemListContainer saludo="Estas en la categoria"/>}/>
         <Route path='/item/:id' element={<ItemdetailContainer/>}/>
          <Route path='/cart' element={<Cart/>}/>
