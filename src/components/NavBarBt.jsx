@@ -14,7 +14,7 @@ function NavBarBt() {
     <Navbar expand="lg" style={{ backgroundColor: "#f6dcbf" }}>
       <Container>
         <Navbar.Brand as={NavLink} to="/">
-            <img alt='logo' src='../logo.png' style={{width:"13rem"}}/>
+            <img alt='logo' src='../logo.png' style={{width:"14rem"}}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

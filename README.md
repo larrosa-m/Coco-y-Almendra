@@ -1,6 +1,10 @@
 # Coco y Almendra
 
- E-commerce desarrollado con React JS, como protecto para CoderHouse.
+ E-commerce de pastelería saludable, desarrollado con React JS.
+
+ ### Vista del sitio
+
+ ![Imagen](public/vista.png)
 
 ### Instalación ⚙️
 
@@ -14,3 +18,6 @@
 - [React Bootstrap](https://react-bootstrap.netlify.app/): utilizada para el styling de la app.
 - [React Router Dom](https://react-bootstrap.netlify.app/): utilizada para la navegación por rutas
 - [Firebase](https://react-bootstrap.netlify.app/): utilizada como base de datos
+- [Sweetalert2](https://sweetalert2.github.io/recipe-gallery/): utilizada para las alertas
+- [Hook forms](https://react-hook-form.com/): utilizada para la validación de formularios
+
