@@ -24,7 +24,7 @@ const stockActualizado = detalle.stock - itemQuantity(detalle.id)
   return (
     <div className="d-flex justify-content-center flex-column align-items-center">
         <h1>Detalle de: {detalle.name}</h1>
-        <img alt={detalle.name} src={detalle.img} />
+        <img alt={detalle.name} src={detalle.image} style={{width:'25rem'}}/>
         <p>{detalle.description}</p>
         <p>Stock:{ stockActualizado} unidades disponibles</p>
         <p>Precio: ${detalle.price},00</p>

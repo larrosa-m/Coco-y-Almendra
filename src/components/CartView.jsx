@@ -23,7 +23,7 @@ const CartView = () => {
       <div>
       {cart.map((compra)=>(
         <div key={compra.id}  style={{display:'flex', justifyContent:'space-between', alignItems:'center', width:'100%', padding:'2rem'}}>
-          <img src={compra.img} alt={compra.name} style={{width:'10rem'}}/>
+          <img src={compra.image} alt={compra.name} style={{width:'10rem'}}/>
           <span>{compra.name}</span>
           <span>${compra.price},00</span>
           <span>unidades: {compra.quantity}</span>
