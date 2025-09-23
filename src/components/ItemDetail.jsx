@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react'
 import ItemCount from './ItemCount'
 import { CartContext } from '../context/CartContext'
-import { Link } from "react-router-dom"  
+import { Link } from "react-router-dom" 
+import Swal from 'sweetalert2' 
 
 const ItemDetail = ({detalle}) => {
 const {addItem, itemQuantity}= useContext(CartContext)
@@ -16,7 +17,7 @@ const [purchase, setPuchase]=useState(false)
       title:`Agregaste ${detalle.name} al carrito`,
       showCancelButton:false,
       showConfirmButton:false,
-      timer:1000
+      timer:1500
     })
   }
 const stockActualizado = detalle.stock - itemQuantity(detalle.id)

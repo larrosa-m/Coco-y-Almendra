@@ -14,7 +14,7 @@ function NavBarBt() {
     <Navbar expand="lg" style={{ backgroundColor: "#f6dcbf" }}>
       <Container>
         <Navbar.Brand as={NavLink} to="/">
-            <img alt='logo' src='../logo.png' style={{width:"11rem"}}/>
+            <img alt='logo' src='../logo.png' style={{width:"13rem"}}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -23,13 +23,12 @@ function NavBarBt() {
             <NavDropdown title="productos" id="basic-nav-dropdown">
               <NavDropdown.Item as={NavLink} to="/categories/Galletas">Galletas</NavDropdown.Item>
                 <NavDropdown.Divider />
-              <NavDropdown.Item as={NavLink} to="/categories/Alfaores">Alfaores</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/categories/Alfajores">Alfajores</NavDropdown.Item>
                 <NavDropdown.Divider />
               <NavDropdown.Item as={NavLink} to="/categories/Budines">Budines</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          {cart.length > 0  && <NavLink to='/cart' style={{textDecoration:'none', color:'black'}}><CartWidgetRIcons/></NavLink>}
-          <CartWidget/>
+          {cart.length > 0  && <NavLink to='/cart' style={{textDecoration:'none', color:'black'}}><CartWidget/></NavLink>}
         </Navbar.Collapse>
       </Container>
     </Navbar>

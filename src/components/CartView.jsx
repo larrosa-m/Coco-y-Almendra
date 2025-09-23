@@ -1,10 +1,22 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const CartView = () => {
   const {cart, clear, removeItem, cartTotal}= useContext(CartContext)
- 
+ const preConfirm = ()=>{
+  Swal.fire({
+    title:'¿Vaciar el carrito?',
+    showDenyButton:true,
+    denyButtonText:'Si',
+    confirmButtonText:'No',
+ }).then((result)=>{
+  if(result.isConfirmed){
+    clear()
+  }
+ })
+ }
   return (
     <div>
       <h1>Tu carrito</h1>

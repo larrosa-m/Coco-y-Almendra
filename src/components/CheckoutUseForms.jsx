@@ -3,6 +3,7 @@ import { CartContext } from '../context/CartContext'
 import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore'
 import { db } from '../service/firebase'
 import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 import EmptyCart from './EmptyCart'
 
 const CheckoutUseForms = () => {
@@ -25,7 +26,7 @@ const CheckoutUseForms = () => {
                     date: serverTimestamp()
                 }
                 const ventas = collection(db, "orders")
-                //agrego el doc
+             
                 addDoc(ventas, order)
                 .then((res)=>{
                     cart.forEach((item)=>{
